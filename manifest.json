@@ -1,0 +1,12 @@
+{
+  "manifest_version": 2,
+  "name": "Sane JIRA Priority Arrows",
+  "version": "0.1.0",
+  "content_scripts": [
+    {
+      "matches": ["https://*.atlassian.net/jira/*"],
+      "js": ["content.js"],
+      "run_at": "document_end"
+    }
+  ]
+}
