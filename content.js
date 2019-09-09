@@ -1,3 +1,20 @@
+const transformations = {
+  high: {
+    transform: "rotate(45deg)"
+  },
+  medium: {
+    transform: "rotate(90deg)",
+    opacity: 0.7
+  },
+  low: {
+    transform: "rotate(-45deg)",
+    opacity: 0.5
+  },
+  trivial: {
+    opacity: 0.5
+  }
+};
+
 function getSelector(origin, name) {
   const iconUrl = `images/icons/priorities/${name}.svg`;
   return `[src="/${iconUrl}"], [src="${origin}/${iconUrl}"]`
@@ -10,24 +27,6 @@ function applyStyles(node, styles) {
 }
 
 function inject() {
-  const transformations = {
-    high: {
-      transform: "rotate(45deg)"
-    },
-    medium: {
-      transform: "rotate(90deg)",
-      opacity: 0.7
-    },
-    low: {
-      transform: "rotate(-45deg)",
-      opacity: 0.5
-    },
-    trivial: {
-      opacity: 0.5
-    }
-  };
-
-  // Style the types that need transformations
   Object.entries(transformations).forEach(([key, styles]) => {
     const origin = window.location.origin;
     const selector = getSelector(origin, key);
