@@ -17,22 +17,28 @@ const transformations = {
 
 function getSelector(origin, name) {
   const iconUrl = `images/icons/priorities/${name}.svg`;
-  return `[src="/${iconUrl}"], [src="${origin}/${iconUrl}"]`
+  return `[src="/${iconUrl}"], [src="${origin}/${iconUrl}"]`;
 }
 
-function applyStyles(node, styles) {
+function toStyleString(selector, styles) {
+  let body = "";
   for (key in styles) {
-    node.style[key] = styles[key];
+    body += `${key}: ${styles[key]} !important;`;
   }
+  return `
+    ${selector} { ${body} }
+  `;
 }
 
 function inject() {
   const origin = window.location.origin;
-  Object.entries(transformations).forEach(([key, styles]) => {
+  const styles = document.createElement("style");
+  const bodyArr = Object.entries(transformations).map(([key, styles]) => {
     const selector = getSelector(origin, key);
-    const arrows = document.querySelectorAll(selector);
-    arrows.forEach(arrow => applyStyles(arrow, styles));
+    return toStyleString(selector, styles);
   });
+  styles.textContent = bodyArr.join("");
+  document.head.appendChild(styles);
 }
 
-new MutationObserver(inject).observe(document.body, { childList: true });
+inject();
