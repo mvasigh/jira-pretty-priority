@@ -16,7 +16,7 @@ function inject() {
     },
     medium: {
       transform: "rotate(90deg)",
-      opacity: 0.5
+      opacity: 0.7
     },
     low: {
       transform: "rotate(-45deg)",
