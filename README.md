@@ -1,4 +1,4 @@
-# `jira-sane-priority`
+# `jira-pretty-priority`
 Chrome extension that makes Jira's priority arrows more easily discernable from one another.
 
 ## Example
