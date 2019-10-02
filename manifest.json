@@ -4,7 +4,7 @@
   "version": "0.1.0",
   "content_scripts": [
     {
-      "matches": ["https://*.atlassian.net/jira/*"],
+      "matches": ["https://*.atlassian.net/*"],
       "js": ["content.js"],
       "run_at": "document_idle"
     }
