@@ -4,7 +4,7 @@ Chrome extension that makes Jira's priority arrows more easily discernable from 
 ## Example
 
 <p align="center">
-  <img src="./old.png" height="250" />
+  <img src="https://user-images.githubusercontent.com/13258203/66017409-5694bf80-e4a0-11e9-9150-3b0db08166d2.png" height="250" />
   <br />
   <em>Old: difficult to distinguish from one another</em>
 </p>
@@ -12,7 +12,7 @@ Chrome extension that makes Jira's priority arrows more easily discernable from 
 Jira's standard arrows for priority level are hard to tell apart because they are close in color and don't have any other    characteristics, such as arrow direction.
 
 <p align="center">
-  <img src="./new.png" height="250" />
+  <img src="https://user-images.githubusercontent.com/13258203/66017410-57c5ec80-e4a0-11e9-8ede-4a0d8edd05ee.png" height="250" />
   <br />
   <em>New: easier to scan and identify high-priority tickets</em>
 </p>
